@@ -13,6 +13,10 @@
 		
 		<a href="hello/showForm">Hello world Form</a>
 		
+		<br><br>
+		
+		<a href="student/showStudentRegistrationForm">Student Form</a>
+		
 		
 	</body>
 </html>
