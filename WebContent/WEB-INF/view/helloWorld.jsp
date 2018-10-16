@@ -14,5 +14,13 @@
 		
 		Student Name: ${param.studentName}
 		
+		<br><br>
+		
+		The shoot message : ${ShootOutMessage}
+		
+		<br><br>
+		
+		<a href="${pageContext.request.contextPath}">Menu</a>
+		
 	</body>
 </html>

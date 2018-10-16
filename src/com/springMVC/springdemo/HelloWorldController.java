@@ -1,9 +1,14 @@
 package com.springMVC.springdemo;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RequestMapping("/hello")
 public class HelloWorldController {
 	
 	// need a controller method to show the initial HTML form
@@ -16,6 +21,45 @@ public class HelloWorldController {
 	@RequestMapping("/processForm")
 	public String processForm() {
 		return "helloWorld";
+	}
+	
+	//new controller method to read form data and pass it to the model
+	@RequestMapping("/processFormVersionTow")
+	public String letsShoutOut(HttpServletRequest request, Model model)
+	{
+		// read the request param from the html form
+		String theName = request.getParameter("studentName");
+		
+		//convert that data to all caps
+		theName = theName.toUpperCase();
+		
+		
+		//create the message to shoot out
+		String message = "YOOO " + theName + " ! ! ";
+		
+		//add message to the model
+		model.addAttribute("ShootOutMessage", message);
+		
+		return "helloWorld";
+	}
+	
+	//new controller method to read form data and pass it to the model
+	@RequestMapping("/processFormVersionThree")
+	public String letsShoutOut2(@RequestParam("studentName") String theName , Model model)
+	{
+		
+		//convert that data to all caps
+		theName = theName.toUpperCase();
+			
+			
+		//create the message to shoot out
+		String message = "YOOOAAAH " + theName + " ! ! ";
+			
+		//add message to the model
+		model.addAttribute("ShootOutMessage", message);
+			
+		return "helloWorld";
+		
 	}
 
 }
