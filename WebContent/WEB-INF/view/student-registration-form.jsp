@@ -15,6 +15,7 @@
 				<br><br>
 				
 				Last Name : <form:input path = "lastName" placeholder = "Enter First Name"/>
+							<form:errors path = "lastName"/>
 				
 				<br><br>
 				

@@ -2,10 +2,15 @@ package com.springMVC.springdemo;
 
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Student {
 	
 	private String firstName;
 	
+	@NotNull(message = "Last Name should not be empty")
+	@Size(min = 1,message = "Last Name too long" )
 	private String lastName;
 	
 	private String country;
@@ -29,7 +34,7 @@ public class Student {
 		countryOptions.put("NGR", "Nigeria");
 		countryOptions.put("BRZ", "Brazil");
 		countryOptions.put("CND", "Canada");
-		countryOptions.put("GMY", "GERMANY");
+		countryOptions.put("GMY", "Germany");
 		
 		//populate language options
 		favoriteLanguageOptions = new LinkedHashMap<>();
