@@ -27,11 +27,29 @@
 				
 				<br><br>
 				
+				Sport : 	<form:select path="sport"> 
+				
+ 								<form:options items="${theSportOptions}" />
+ 				
+							</form:select>
+				
+				<br><br>
+				
 				Programming Language : <form:radiobuttons path = "favoriteLanguage" items = "${student.favoriteLanguageOptions}"/>
 				
 				<br><br>
 				
 				Operation system : <form:checkboxes path = "operatingSystem" items = "${student.operatingSystemsOptions}" />
+				
+				<br><br>
+				
+				Free Passes : <form:input path="freePasses" placeholder = "Enter free passes"/>
+								<form:errors path = "freePasses"/>
+								
+				<br><br>
+				
+				Postal Code : <form:input path="postalCode" placeholder = "Enter Postal Code"/>
+								<form:errors path = "postalCode"/>					
 				
 				<br><br>
 				

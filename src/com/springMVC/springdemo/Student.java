@@ -2,28 +2,51 @@ package com.springMVC.springdemo;
 
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class Student {
 	
 	private String firstName;
 	
+	
 	@NotNull(message = "Last Name should not be empty")
 	@Size(min = 1,message = "Last Name too long" )
 	private String lastName;
 	
+	
 	private String country;
+	
+	private String sport;
+	
 	
 	private String favoriteLanguage;
 	
+	
 	private String operatingSystem;
+	
+	
+	@NotNull(message = "is required")
+	@Min (value = 0, message = "must be greater or equal to zero")
+	@Max (value = 10, message = "must be less than or equal to 10")
+	private Integer freePasses;
+	
+	
+	@Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
+	private String postalCode;
+	
 	
 	private LinkedHashMap<String,String> countryOptions;
 	
+	
 	private LinkedHashMap <String, String> favoriteLanguageOptions;
 	
+	
 	private LinkedHashMap <String, String> operatingSystemsOptions;
+	
 	
 	public  Student() {
 		//populate country option
@@ -51,33 +74,36 @@ public class Student {
 		operatingSystemsOptions.put("MAC", "MAC OS");
 		operatingSystemsOptions.put("ANDROID", "ANDROID");
 	}
+	
 
 	public String getFirstName() {
 		return firstName;
 	}
+	
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+	
 
 	public String getLastName() {
 		return lastName;
 	}
+	
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 	
-	
 
 	public String getCountry() {
 		return country;
 	}
+	
 
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	
 	
 
 	public LinkedHashMap<String, String> getCountryOptions() {
@@ -85,15 +111,14 @@ public class Student {
 	}
 	
 	
-
 	public String getFavoriteLanguage() {
 		return favoriteLanguage;
 	}
+	
 
 	public void setFavoriteLanguage(String favoriteLanguage) {
 		this.favoriteLanguage = favoriteLanguage;
 	}
-	
 	
 
 	public LinkedHashMap<String, String> getFavoriteLanguageOptions() {
@@ -105,29 +130,55 @@ public class Student {
 	public String getOperatingSystem() {
 		return operatingSystem;
 	}
+	
 
 	public void setOperatingSystem(String operatingSystem) {
 		this.operatingSystem = operatingSystem;
 	}
 	
 	
-	
-
 	public LinkedHashMap<String, String> getOperatingSystemsOptions() {
 		return operatingSystemsOptions;
 	}
 
-	@Override
-	public String toString() {
-		return "Student [firstName=" + firstName + ", lastName=" + lastName + ", country=" + country
-				+ ", favoriteLanguage=" + favoriteLanguage + ", operatingSystem=" + operatingSystem + "]";
+	
+	public Integer getFreePasses() {
+		return freePasses;
+	}
+	
+
+	public void setFreePasses(Integer freePasses) {
+		this.freePasses = freePasses;
+	}
+	
+
+	public String getPostalCode() {
+		return postalCode;
+	}
+	
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
+	
+	
+		
+
+	public String getSport() {
+		return sport;
 	}
 
-	
-	
-	
-	
-	
-	
+
+	public void setSport(String sport) {
+		this.sport = sport;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Student [firstName=" + firstName + ", lastName=" + lastName + ", country=" + country + ", sport="
+				+ sport + ", favoriteLanguage=" + favoriteLanguage + ", operatingSystem=" + operatingSystem
+				+ ", freePasses=" + freePasses + ", postalCode=" + postalCode + "]";
+	}
 
 }

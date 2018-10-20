@@ -24,6 +24,19 @@
 			
 			<br><br>
 			
+			<b>Free passes :</b> ${student.freePasses}
+			
+			<br><br>
+			
+			<b>Postal Code :</b> ${student.postalCode}
+			
+			<br><br>
+			
+			<b>Sport :</b> ${student.sport}
+			
+			<br><br>
+			
+			
 			<a href = "${pageContext.request.contextPath}" >main menu</a>
 
 	</body>
