@@ -18,7 +18,7 @@ public @interface CourseCode {
 	public String value() default "LUV";
 	
 	//define  the default error message
-	public String message() default "Must start with LUV";
+	public String message() default "Must start with IN";
 		
 	//define default group
 	public Class<?>[] groups() default{};
