@@ -15,7 +15,12 @@
 				<br><br>
 				
 				Last Name : <form:input path = "lastName" placeholder = "Enter First Name"/>
-							<form:errors path = "lastName"/>
+							<form:errors path = "lastName" style = "color:red;"/>
+				
+				<br><br>
+				
+				Course Code : <form:input path = "courseCode" placeholder = "Enter Course Code"/>
+							<form:errors path = "courseCode" style = "color:red;"/>
 				
 				<br><br>
 				
@@ -27,9 +32,9 @@
 				
 				<br><br>
 				
-				Sport : 	<form:select path="sport"> 
+				Sport : 	<form:select path = "sport"> 
 				
- 								<form:options items="${theSportOptions}" />
+ 								<form:options items = "${theSportOptions}" />
  				
 							</form:select>
 				
@@ -44,12 +49,12 @@
 				<br><br>
 				
 				Free Passes : <form:input path="freePasses" placeholder = "Enter free passes"/>
-								<form:errors path = "freePasses"/>
+								<form:errors path = "freePasses" style="color:red;"/>
 								
 				<br><br>
 				
 				Postal Code : <form:input path="postalCode" placeholder = "Enter Postal Code"/>
-								<form:errors path = "postalCode"/>					
+								<form:errors path = "postalCode" style="color:red;"/>					
 				
 				<br><br>
 				

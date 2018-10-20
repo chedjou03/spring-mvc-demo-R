@@ -12,6 +12,10 @@
 			
 			<br><br>
 			
+			<b>Course code :</b> ${student.courseCode}
+			
+			<br><br>
+			
 			<b>Country :</b> ${student.country}
 			
 			<br><br>

@@ -8,6 +8,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.springMVC.validation.CourseCode;
+
 public class Student {
 	
 	private String firstName;
@@ -27,6 +29,10 @@ public class Student {
 	
 	
 	private String operatingSystem;
+	
+	@NotNull(message = "Is required ")
+	@CourseCode
+	private String courseCode;
 	
 	
 	@NotNull(message = "is required")
@@ -173,12 +179,24 @@ public class Student {
 		this.sport = sport;
 	}
 
+		
 
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
+
+
+	
 	@Override
 	public String toString() {
 		return "Student [firstName=" + firstName + ", lastName=" + lastName + ", country=" + country + ", sport="
 				+ sport + ", favoriteLanguage=" + favoriteLanguage + ", operatingSystem=" + operatingSystem
-				+ ", freePasses=" + freePasses + ", postalCode=" + postalCode + "]";
+				+ ", courseCode=" + courseCode + ", freePasses=" + freePasses + ", postalCode=" + postalCode + "]";
 	}
 
 }
